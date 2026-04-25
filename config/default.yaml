@@ -1,0 +1,10 @@
+seed: 42
+
+paths:
+  train_csv: data/raw/train.csv
+  test_csv: data/raw/test.csv
+  sample_submit_csv: data/raw/sample_submit.csv
+  output_submission_csv: outputs/submissions/baseline_submission.csv
+
+target:
+  column: target

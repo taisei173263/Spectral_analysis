@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Data and outputs
+data/processed/
+outputs/
+logs/
+models/
+
+# Local env/config
+.env
+.DS_Store
