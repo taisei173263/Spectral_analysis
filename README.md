@@ -62,6 +62,7 @@ qstat -u "$USER"
 ```text
 .
 ├── config/
+├── configs/
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -70,11 +71,19 @@ qstat -u "$USER"
 ├── models/
 ├── notebooks/
 ├── outputs/
+│   ├── experiments/
 │   └── submissions/
 ├── scripts/
 ├── src/
-└── tests/
+├── tests/
+└── experiment_log.md
 ```
+
+## 実験（exp）管理ルール
+- 設定は `configs/expXXX_*.yaml` に追加
+- 実験結果は `outputs/experiments/EXP-XXX/` に保存
+- 提出CSVは `outputs/submissions/` に保存
+- 実験メモは `experiment_log.md` に追記
 
 ## テスト
 ```bash
