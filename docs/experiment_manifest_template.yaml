@@ -1,0 +1,39 @@
+# Experiment Manifest Template
+# 使い方:
+# - このファイルをコピーして `outputs/experiments/EXP-XXX/manifest.yaml` に保存してください。
+# - 実験ごとに必須項目を埋め、提出後に lb_public / lb_private を更新してください。
+
+exp_id: EXP-XXX
+owner: your_name
+git_commit: "<git commit hash>"
+branch: "<git branch name>"
+
+competition: "<competition name or key>"
+data_version: "<dataset version>"
+fold_version: "<fold strategy version>"
+seed: 42
+
+model:
+  name: "<model name>"
+  params:
+    # 例:
+    # learning_rate: 0.03
+    # num_leaves: 64
+    # max_depth: -1
+
+features:
+  - "<feature_set_1>"
+  - "<feature_set_2>"
+
+metrics:
+  cv: null
+  lb_public: null
+  lb_private: null
+
+artifacts:
+  oof: "outputs/experiments/EXP-XXX/oof_predictions.csv"
+  submission: "outputs/submissions/expXXX_submission.csv"
+  model: null
+  config: "configs/expXXX_xxx.yaml"
+
+comment: ""
