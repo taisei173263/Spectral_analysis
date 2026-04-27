@@ -20,6 +20,10 @@ signate competition-list
 signate task-list --competition_key=<competition_public_key>
 ```
 
+今回提出したコンペ情報（固定値）:
+- competition_key: `37308d147238487c96551300b8e4cb76`（近赤外研究会 スペクトル分析チャレンジ）
+- task_key: `8940dcfa70434a6aaaa28d661652d536`（木材含水率予測）
+
 ## 3. データ配置
 既存データは `data/raw/` に置く想定です。
 
@@ -40,6 +44,12 @@ python -m src.baseline --config config/default.yaml
 bash scripts/submit_signate.sh <task_public_key> outputs/submissions/baseline_submission.csv "baseline submit"
 ```
 
+今回の提出例:
+```bash
+source .venv/bin/activate
+bash scripts/submit_signate.sh 8940dcfa70434a6aaaa28d661652d536 outputs/submissions/baseline_submission.csv "job 531256 baseline submit"
+```
+
 ## 6. GPUジョブ実行（AGE/SGE: qsub/qstat）
 この環境は PBS ではなく AGE/SGE 系です。  
 GPUは `qsub` で `-l gpu=<数>` を指定して要求します。
@@ -57,6 +67,16 @@ qstat -u "$USER"
 
 詳細コマンド集は `docs/cluster_gpu_commands.md` を参照してください。  
 `job.sh` 実行から提出までの一連手順は `docs/job_to_submit_flow.md` にまとめています。
+`jobs/job.sh` の書き方と各行の意味は `jobs/JOB_SCRIPT_GUIDE.md` を参照してください。
+コンペ実戦用パイプラインは `docs/competition_pipeline.md` を参照してください。
+
+### job.sh 運用の注意点（この環境でハマりやすい点）
+- 実行コマンドは `uv` ではなく `./.venv/bin/python` を使う  
+  （計算ノードで `uv: command not found` を避けるため）
+- 改行コードは LF にする  
+  （CRLF だと `^M` エラーでジョブが即失敗する）
+- 標準出力/標準エラーは `logs/` に出す  
+  （`#$ -o logs/` と `#$ -e logs/`）
 
 ## ディレクトリ構成
 ```text

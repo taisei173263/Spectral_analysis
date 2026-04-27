@@ -4,3 +4,10 @@ numpy
 scikit-learn
 pyyaml
 pytest
+scipy
+matplotlib
+seaborn
+joblib
+lightgbm
+catboost
+optuna

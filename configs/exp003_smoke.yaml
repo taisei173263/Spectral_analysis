@@ -1,0 +1,59 @@
+experiment_id: EXP-003
+name: exp003_smoke
+description: Fast smoke test for the competition pipeline.
+seed: 42
+
+paths:
+  train_csv: data/raw/train.csv
+  test_csv: data/raw/test.csv
+  sample_submit_csv: data/raw/sample_submit.csv
+  output_submission_csv: outputs/submissions/exp003_smoke_submission.csv
+  experiment_dir: outputs/experiments/EXP-003
+
+target:
+  column: 含水率
+
+cv:
+  strategy: group_kfold
+  n_splits: 3
+
+features:
+  include_full_spectra: false
+  include_summary: true
+  include_bands: true
+  pca_components: 8
+  metadata:
+    numeric: false
+    one_hot_species: false
+  preprocess_blocks:
+    - name: raw
+      params:
+        prefix: raw
+    - name: snv
+      params:
+        prefix: snv
+
+models:
+  - name: ridge
+    params:
+      alpha: 10.0
+  - name: pls
+    params:
+      n_components: 8
+  - name: hist_gradient_boosting
+    params:
+      max_iter: 80
+      learning_rate: 0.05
+      max_leaf_nodes: 15
+      l2_regularization: 1.0
+
+ensemble:
+  weights: {}
+
+postprocess:
+  clip:
+    enabled: true
+    min: 0
+
+artifacts:
+  save_models: false

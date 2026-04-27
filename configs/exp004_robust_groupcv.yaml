@@ -1,0 +1,73 @@
+experiment_id: EXP-004
+name: exp004_robust_groupcv
+description: Unknown-species robust ensemble with chemometric preprocessing.
+seed: 42
+
+paths:
+  train_csv: data/raw/train.csv
+  test_csv: data/raw/test.csv
+  sample_submit_csv: data/raw/sample_submit.csv
+  output_submission_csv: outputs/submissions/exp004_robust_submission.csv
+  experiment_dir: outputs/experiments/EXP-004
+
+target:
+  column: 含水率
+
+cv:
+  strategy: group_kfold
+  n_splits: 5
+
+features:
+  include_full_spectra: true
+  include_summary: true
+  include_bands: true
+  pca_components: 16
+  metadata:
+    numeric: false
+    one_hot_species: false
+  preprocess_blocks:
+    - name: snv
+      params:
+        prefix: snv
+
+models:
+  - name: pls
+    params:
+      n_components: 20
+  - name: ridge
+    params:
+      alpha: 100.0
+  - name: kernel_ridge
+    params:
+      alpha: 10.0
+      kernel: rbf
+      gamma: 0.0005
+  - name: lightgbm
+    params:
+      objective: regression
+      n_estimators: 30
+      learning_rate: 0.05
+      num_leaves: 16
+      min_child_samples: 12
+      subsample: 0.8
+      colsample_bytree: 0.35
+      max_bin: 63
+      n_jobs: 1
+      force_col_wise: true
+      reg_alpha: 0.1
+      reg_lambda: 5.0
+
+optuna:
+  enabled: false
+  n_trials: 0
+
+ensemble:
+  weights: {}
+
+postprocess:
+  clip:
+    enabled: true
+    min: 0
+
+artifacts:
+  save_models: false
