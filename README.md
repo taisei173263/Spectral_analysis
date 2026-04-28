@@ -1,7 +1,7 @@
 # Spectral Analysis Competition Starter
 
 SIGNATE CLI で提出まで行える最小構成のスターターです。
-
+大谷来夢
 ## 1. セットアップ
 ```bash
 bash scripts/setup.sh
