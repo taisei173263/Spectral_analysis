@@ -1,6 +1,6 @@
 # Spectral Analysis Competition Starter
 山本晃大のブランチだよ
-これから頑張る
+これから頑張るよ
 
 SIGNATE CLI で提出まで行える最小構成のスターターです。
 
