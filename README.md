@@ -1,5 +1,7 @@
 # Spectral Analysis Competition Starter
 
+こんにちは（菊田）
+
 SIGNATE CLI で提出まで行える最小構成のスターターです。
 
 ## 1. セットアップ
