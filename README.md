@@ -1,4 +1,5 @@
 # Spectral Analysis Competition Starter
+山本晃大のブランチ
 
 SIGNATE CLI で提出まで行える最小構成のスターターです。
 
