@@ -40,7 +40,9 @@ qsub jobs/competition_submit_exp004.sh
 - `src/preprocessing.py`: SNV、MSC、Savitzky-Golay、微分。
 - `src/features.py`: スペクトル統計、バンド特徴、PCA、メタ特徴。
 - `src/models.py`: Ridge、PLS、KernelRidge、GBDT、LightGBM、CatBoost。
-- `src/train_competition.py`: CV、OOF、アンサンブル、成果物保存。
+- `src/train_competition.py`: CLI エントリ（`MPLCONFIGDIR` 設定後に `run_experiment` を呼ぶ）。
+- `src/experiment.py`: 実験オーケストレーション（データ読込、特徴量、学習ループ、提出）。
+- `src/cv.py` / `src/metrics.py` / `src/evaluation.py` / `src/tuning.py` / `src/ensemble.py` / `src/outputs.py`: CV 分割、指標、fold 学習、Optuna、重み付き合成、成果物保存。
 
 ## 検証方針
 

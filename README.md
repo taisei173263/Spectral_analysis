@@ -99,6 +99,8 @@ qstat -u "$USER"
 └── experiment_log.md
 ```
 
+初学者向けに、**`src` 内の各ファイルと主要フォルダの役割**を文章で説明したガイドがあります: [docs/beginner_project_guide.md](docs/beginner_project_guide.md)。
+
 ## 実験（exp）管理ルール
 - 設定は `configs/expXXX_*.yaml` に追加
 - 実験結果は `outputs/experiments/EXP-XXX/` に保存
