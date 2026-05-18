@@ -1,0 +1,11 @@
+Per-species test spectra outputs
+- output_dir: data/figure/spectrum_species_test
+- species_count: 6
+
+Files
+- species_2.png: n=96
+- species_6.png: n=63
+- species_7.png: n=192
+- species_9.png: n=45
+- species_10.png: n=101
+- species_18.png: n=53

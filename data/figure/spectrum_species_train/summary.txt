@@ -1,0 +1,19 @@
+Per-species spectra outputs
+- output_dir: data/figure/spectrum_species
+- species_count: 13
+- global_moisture_range: 0.840336 to 298.581560
+
+Files
+- species_1.png: n=94, moisture_min=17.204301, moisture_max=216.129032
+- species_3.png: n=87, moisture_min=4.216867, moisture_max=58.734940
+- species_4.png: n=110, moisture_min=24.166667, moisture_max=156.250000
+- species_5.png: n=91, moisture_min=23.214286, moisture_max=180.357143
+- species_8.png: n=97, moisture_min=0.840336, moisture_max=160.084034
+- species_11.png: n=88, moisture_min=4.149378, moisture_max=158.921162
+- species_12.png: n=183, moisture_min=13.253012, moisture_max=153.815261
+- species_13.png: n=107, moisture_min=16.932907, moisture_max=114.057508
+- species_14.png: n=141, moisture_min=0.970874, moisture_max=198.543689
+- species_15.png: n=112, moisture_min=12.765957, moisture_max=298.581560
+- species_16.png: n=68, moisture_min=18.552036, moisture_max=180.542986
+- species_17.png: n=93, moisture_min=2.592593, moisture_max=138.888889
+- species_19.png: n=51, moisture_min=12.209302, moisture_max=84.883721
